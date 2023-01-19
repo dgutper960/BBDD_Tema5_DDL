@@ -33,7 +33,7 @@ ALTER TABLE directores
 
 ALTER TABLE peliculas
 	ADD COLUMN recaudacion float UNSIGNED,
-    MODIFY presupuesto float UNSIGNED check (presupuesto > 500000),
+    MODIFY COLUMN presupuesto float UNSIGNED check (presupuesto > 500000),
     MODIFY COLUMN valoracion TINYINT UNSIGNED CHECK (valoracion BETWEEN '0' AND '10'),
     MODIFY COLUMN nacionalidad VARCHAR(20) DEFAULT 'Estados Unidos';
     
@@ -50,8 +50,14 @@ ALTER TABLE socios
 ALTER TABLE participan
 	CHANGE premios premios_conseguidos VARCHAR(255);
     
+    
+# Ejercicio 7. Índices
 
-	
+CREATE INDEX InActoresApeNom ON actores (apellidos, nombre);
+CREATE INDEX InDorectoresApeNom ON directores (apellidos, nombre);
+CREATE INDEX InPeliculaTitulo ON peliculas (titulo);
+CREATE INDEX InSociosApeNom ON socios (apellidos, nombre);
+
     
     
     
