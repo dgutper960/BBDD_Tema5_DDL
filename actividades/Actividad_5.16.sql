@@ -18,6 +18,7 @@
  DROP TABLE IF EXISTS libros;
  CREATE TABLE IF NOT EXISTS libros(
 	id INT UNSIGNED auto_increment PRIMARY KEY,
+    titulo varchar(255),
     autor VARCHAR(255) NOT NULL,
     precio DECIMAL(10.2) NOT NULL,
     asignatura VARCHAR(255) NOT NULL,
@@ -136,7 +137,6 @@ CREATE TABLE IF NOT EXISTS libros_pedidos(
  	create_at timestamp default current_timestamp,
     update_at timestamp default current_timestamp
 );
-
 
 # Tabla almacenes_libros
 DROP TABLE IF EXISTS almacenes_libros;
